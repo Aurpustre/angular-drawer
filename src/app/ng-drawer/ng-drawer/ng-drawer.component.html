@@ -1,0 +1,11 @@
+<div class="ng-drawer">
+
+    <div *ngIf="isOpen" class="ng-drawer-back" (click)="closeDrawer($event)"></div>
+
+    <button class="ng-drawer-button" (click)="openDrawer($event)" *ngIf="!isOpen">展开</button>
+    <button class="ng-drawer-button" (click)="closeDrawer($event)" *ngIf="isOpen">收起</button>
+
+    <div [ngStyle]="{'width': _ndwidth}" class="ng-drawer-wrapper">
+        <ng-content select="[name=main]"></ng-content>
+    </div>
+</div>
